@@ -26,7 +26,15 @@ After that updeux will listen to your terminal inputs and you'll be able to cont
 
 updeux has several options to handle your needs. You can set options by using a **.updeuxrc** (JSON) or using the `updeuxrc` property in the **package.json**.
 
-### options.maxFailuresByUpdate : `number`
++ [maxFailuresByUpdate](#maxFailuresByUpdate) : `number` = `5`
++ [maxWorker](#maxWorker) : `number` = `os.cpus().length`
++ [keepFresh](#keepFresh) : `bool` = `false`
++ [require](#require) : `Array` = `[]`
++ [shutdownDelay](#shutdownDelay) : `number`= `5000`
++ [src](#src) : `string`= `./index.js`
++ [watchDebounce](#watchDebounce) : `number` = `100`
+
+### options.maxFailuresByUpdate : `number` = `5`
 
 Number of failed attempts to run workers by update before stopping to try until next update.
 
@@ -56,6 +64,6 @@ Duration in *ms* to wait before killing a worker that was not shutdown after bei
 
 Source file to run. If a folder is given, updeux will try to run the index.js file in it.
 
-### options.watchDebounce : `number` = `100``
+### options.watchDebounce : `number` = `100`
 
 Debounce delay in *ms* applied to workers update on file change.
